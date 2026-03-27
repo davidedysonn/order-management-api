@@ -1,13 +1,11 @@
 package com.davidbelfort.order_management_api.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.hibernate.annotations.IdGeneratorType;
 import org.hibernate.id.IdentityGenerator;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 public class Customer implements Serializable {
@@ -17,6 +15,9 @@ public class Customer implements Serializable {
     public Long id;
     public String name;
     public String email;
+
+    @OneToMany(mappedBy = "customer")
+    public List<Order> orders;
 
     public Customer() {
     }
