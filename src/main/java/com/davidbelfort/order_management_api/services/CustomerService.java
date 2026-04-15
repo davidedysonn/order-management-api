@@ -8,5 +8,5 @@ public interface CustomerService {
     Customer read (Long id);
     Customer readName (String name);
     Customer update (Long id, Customer customer);
-    Void delete (Long id);
+    void delete (Long id);
 }
